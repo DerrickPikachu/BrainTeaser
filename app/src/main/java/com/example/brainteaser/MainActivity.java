@@ -38,6 +38,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         hint.setText("答案:" + answer[i]);
+        if (i % 2 == 1) {
+            hint.setDuration(Toast.LENGTH_LONG);
+        }
+        else {
+            hint.setDuration(Toast.LENGTH_SHORT);
+        }
         hint.show();
     }
 }
