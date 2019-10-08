@@ -2,6 +2,7 @@ package com.example.brainteaser;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,6 +18,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     String[] answer = {"球門", "虧", "傻瓜", "瀑布", "環保署", "偷笑", "五月花"};
     ArrayAdapter<String> questionAdapter;
     ListView questionList;
+    Toast hint;
+
+    @SuppressLint("ShowToast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,11 +31,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         questionList = findViewById(R.id.questionList);
         questionList.setOnItemClickListener(this);
         questionList.setAdapter(questionAdapter);
+
+        hint = Toast.makeText(this,"", Toast.LENGTH_SHORT);
     }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast hint = Toast.makeText(this, answer[i], Toast.LENGTH_SHORT);
+        hint.setText("答案:" + answer[i]);
         hint.show();
     }
 }
