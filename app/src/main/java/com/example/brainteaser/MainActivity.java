@@ -12,8 +12,9 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     String[] question = {"為甚麼門永遠關不上?", "甚麼東西沒人愛吃?", "甚麼瓜不能吃?",
-                        "什麼布切不斷?", "甚麼鼠最愛乾淨?", "偷甚麼不犯法?"};
-    String[] answer = {"球門", "虧", "傻瓜", "瀑布", "環保署", "偷笑"};
+                        "什麼布切不斷?", "甚麼鼠最愛乾淨?", "偷甚麼不犯法?",
+                        "廁所要放什麼花?"};
+    String[] answer = {"球門", "虧", "傻瓜", "瀑布", "環保署", "偷笑", "五月花"};
     ArrayAdapter<String> questionAdapter;
     ListView questionList;
     @Override
